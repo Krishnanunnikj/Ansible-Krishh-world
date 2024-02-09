@@ -1,0 +1,13 @@
+---
+- name: Installing Java on slave1
+  hosts: Slave1
+  become: yes
+  tasks:
+   - name: Installing Java
+     apt: name=openjdk-17-jdk state=latest update_cache=yes 
+- name: Installing Mysql on slave2
+  hosts: Slave2
+  become: yes
+  tasks:
+   - name: Installing Mysql
+     apt: name=mysql-server state=latest update_cache=yes 
